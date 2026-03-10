@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Manager — by Imane El Mahi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <h2>Student Manager</h2>
+    <div class="navbar-actions">
+      <button class="btn-export" onclick="exportCSV()">⬇ Export CSV</button>
+      <button class="btn-theme" onclick="toggleTheme()" id="themeBtn" title="Toggle theme">🌙</button>
+      <button onclick="logout()">Sign out</button>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <!-- ── Stats Bar ── -->
+    <div class="stats-bar">
+      <div class="stat-card">
+        <div class="stat-icon blue">👥</div>
+        <div class="stat-info"><p>Total Students</p><span id="totalCount">—</span></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon green">✅</div>
+        <div class="stat-info"><p>Last Added</p><span id="lastAdded">—</span></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon pink">🔍</div>
+        <div class="stat-info"><p>Search Results</p><span id="searchCount">—</span></div>
+      </div>
+    </div>
+
+    <!-- ── Charts Row ── -->
+    <div class="charts-row">
+      <div class="chart-card">
+        <div class="chart-title">📅 Registrations by Month</div>
+        <div class="chart-wrap"><canvas id="chartMonth"></canvas></div>
+      </div>
+      <div class="chart-card">
+        <div class="chart-title">🎂 Age Distribution</div>
+        <div class="chart-wrap"><canvas id="chartAge"></canvas></div>
+      </div>
+    </div>
+
+    <!-- ── Main Row: Students + Activity ── -->
+    <div class="main-row">
+
+      <!-- Students Card -->
+      <div class="card">
+        <div class="card-header">
+          <h3 id="formTitle">Add New Student</h3>
+        </div>
+
+        <div class="card-body">
+          <form id="studentForm">
+            <input type="hidden" id="studentId">
+            <input type="text"  id="name"      placeholder="Full Name">
+            <input type="email" id="email"     placeholder="Email Address">
+            <input type="date"  id="birthdate">
+            <button type="submit">Save Student</button>
+            <button type="button" id="cancelEditBtn" class="btn-cancel-edit" onclick="cancelEdit()" style="display:none">✕ Cancel Edit</button>
+          </form>
+        </div>
+
+        <!-- Sort + Search -->
+        <div class="table-controls">
+          <input type="text" id="search" placeholder="Search by name or email…">
+          <div class="sort-group">
+            <span class="sort-label">Sort:</span>
+            <button class="sort-btn" data-sort="name"       onclick="sortBy('name')">Name</button>
+            <button class="sort-btn" data-sort="birthdate"  onclick="sortBy('birthdate')">Birthdate</button>
+            <button class="sort-btn" data-sort="created_at" onclick="sortBy('created_at')">Created at</button>
+          </div>
+        </div>
+
+        <div id="studentList"></div>
+        <div id="pagination"></div>
+      </div>
+
+      <!-- Activity Log -->
+      <div class="activity-card">
+        <div class="activity-header">🕒 Activity Log</div>
+        <div id="activityLog"><p class="activity-empty">Loading…</p></div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="footer">
+    <span>Designed with <span class="footer-heart">♥</span> by <strong>Imane El Mahi</strong></span>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

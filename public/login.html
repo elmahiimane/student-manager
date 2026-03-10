@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Manager — by Imane El Mahi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-body">
+
+  <!-- Theme toggle -->
+  <button class="login-theme-btn" onclick="toggleTheme()" id="themeBtn" title="Toggle theme">🌙</button>
+
+  <div class="login-wrapper">
+
+    <!-- Left visual panel -->
+    <div class="login-image">
+      <div class="icon-pulse-wrapper">
+        <img src="https://cdn-icons-png.flaticon.com/512/6024/6024190.png" alt="Admin" class="cyber-icon">
+        <div class="pulse-ring"></div>
+      </div>
+      <div class="login-image-text">
+        <h3>Student Manager</h3>
+        <p>by Imane El Mahi</p>
+      </div>
+    </div>
+
+    <!-- Right form panel -->
+    <div class="login-form-side">
+      <div class="admin-badge">Admin Portal</div>
+      <h2>Welcome back</h2>
+      <p class="login-subtitle">Sign in to access your dashboard</p>
+
+      <div class="input-group">
+        <span class="icon">👤</span>
+        <input type="text" id="username" placeholder="Username" autocomplete="username">
+      </div>
+
+      <div class="input-group">
+        <span class="icon">🔑</span>
+        <input type="password" id="password" placeholder="Password" autocomplete="current-password"
+               onkeydown="if(event.key==='Enter') login()">
+      </div>
+
+      <button onclick="login()" class="btn-login">Sign In</button>
+
+      <div class="security-note">
+        <small>🔒 Sessions expire after 2 hours</small>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
