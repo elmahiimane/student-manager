@@ -31,7 +31,9 @@ A full-stack student management portal built with **Node.js**, **Express**, **My
 | ![Login Dark](image.png) | ![Login Light](image-1.png) |
 
 
+## 🎥 Demo Video
 
+[![Watch the demo](https://img.youtube.com/vi/40RxThEQMeU/0.jpg)](https://www.youtube.com/watch?v=40RxThEQMeU)
 ---
 
 ## 🛠️ Tech Stack
