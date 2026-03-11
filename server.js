@@ -1,5 +1,4 @@
 require('dotenv').config();
-require('./seed');
 const express = require("express");
 const cors    = require("cors");
 const db      = require("./db");
